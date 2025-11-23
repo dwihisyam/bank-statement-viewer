@@ -31,16 +31,42 @@ export default function Page() {
 
   const hasData = balance !== null && balance > 0;
 
+  const handleBack = () => {
+    setBalance(null); // reset balance → hasData menjadi false
+  };
+
   return (
     <div>
       <h1 style={{ fontSize: 22, fontWeight: 700, textAlign: "center" }}>
-        Bank Statement Viewerr
+        Bank Statement Viewer
       </h1>
 
-      <FileUploader />
+      {!hasData && (
+        <>
+          <FileUploader />
+        </>
+      )}
 
       {hasData && (
         <>
+          <div
+            className="w-3/4"
+            style={{ justifySelf: "anchor-center", textAlignLast: "right" }}
+          >
+            <button
+              onClick={handleBack}
+              style={{
+                padding: "8px 12px",
+                borderRadius: 6,
+                backgroundColor: "#f87171",
+                color: "white",
+                border: "none",
+                cursor: "pointer",
+              }}
+            >
+              Back
+            </button>
+          </div>
           <BalanceCard balance={balance} />
           <Table />
         </>

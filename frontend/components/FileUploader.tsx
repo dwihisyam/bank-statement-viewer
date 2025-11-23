@@ -39,7 +39,7 @@ export default function FileUploader() {
   }
 
   return (
-    <div className="max-w-md mx-auto mt-8 bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
+    <div className="max-w-md mx-auto mt-5 bg-white shadow-lg rounded-2xl p-6 border border-gray-100">
       <h3 className="text-xl font-semibold mb-4 text-gray-800">Upload CSV</h3>
 
       <label className="relative flex flex-col items-center justify-center w-full h-40 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-blue-500 transition">
