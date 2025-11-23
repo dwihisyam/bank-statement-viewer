@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { fetchIssues } from "../utlis/app";
+import { fetchIssues } from "../lib/api";
 
 type Tx = {
   timestamp: number;
@@ -49,13 +49,19 @@ export default function IssuesTableClient() {
               <td>{new Date(tx.timestamp * 1000).toLocaleString()}</td>
               <td>{tx.name}</td>
               <td>{tx.type}</td>
-              <td>{tx.amount.toLocaleString()}</td>
-              <td
-                className={
-                  tx.status === "FAILED" ? "status-failed" : "status-pending"
-                }
-              >
-                {tx.status}
+              <td>Rp. {tx.amount.toLocaleString()}</td>
+              <td>
+                <span
+                  className={`inline-flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-semibold text-center align-center 
+      ${
+        tx.status === "FAILED"
+          ? "bg-red-100 text-red-700"
+          : "bg-yellow-100 text-yellow-700"
+      }`}
+                >
+                  {tx.status === "FAILED" ? "❌" : "⚠️"}
+                  {tx.status}
+                </span>
               </td>
               <td>{tx.description}</td>
             </tr>
