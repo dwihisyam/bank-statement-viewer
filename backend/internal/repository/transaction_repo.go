@@ -42,7 +42,6 @@ func (r *inMemoryRepo) AppendAll(tx []model.Transaction) error {
 func (r *inMemoryRepo) GetAll() []model.Transaction {
 	r.mu.RLock()
 	defer r.mu.RUnlock()
-	// return copy to avoid external mutation
 	out := make([]model.Transaction, len(r.data))
 	copy(out, r.data)
 	return out

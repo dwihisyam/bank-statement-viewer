@@ -18,15 +18,15 @@ type transactionService struct {
 	repo repository.TransactionRepository
 }
 
-func NewTransactionService(r repository.TransactionRepository) TransactionService {
-	return &transactionService{repo: r}
+func NewTransactionService(repo repository.TransactionRepository) TransactionService {
+	return &transactionService{repo: repo}
 }
 
 func (s *transactionService) SaveTransactions(tx []model.Transaction) error {
 	if tx == nil {
 		return errors.New("no transactions")
 	}
-	// Save as replacement (behaviour can be changed to AppendAll)
+
 	return s.repo.SaveAll(tx)
 }
 
@@ -34,7 +34,6 @@ func (s *transactionService) GetAll() []model.Transaction {
 	return s.repo.GetAll()
 }
 
-// CalculateBalance returns credits - debits considering only SUCCESS status
 func (s *transactionService) CalculateBalance() int64 {
 	all := s.repo.GetAll()
 	var credits int64
