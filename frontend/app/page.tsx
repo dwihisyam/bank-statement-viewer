@@ -13,7 +13,7 @@ export default async function Page() {
 
   return (
     <div>
-      <h1 style={{ marginBottom: 12 }}>Bank Statement Viewer</h1>
+      <h1 style={{ marginBottom: 12 }}>Bank Statement Viewerr</h1>
 
       <FileUploader />
 
