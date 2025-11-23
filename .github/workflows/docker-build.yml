@@ -28,6 +28,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: frontend
-          file: frontend/Dockerfile
+          file: frontend/Dockerfil
           push: false
           tags: frontend:test
