@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { uploadCSV } from "../lib/api";
+import { uploadCSV } from "../utils/api";
 import Snackbar from "./Snackbar";
 
 export default function FileUploader() {

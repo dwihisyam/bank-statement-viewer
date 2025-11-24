@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import FileUploader from "../components/FileUploader";
 import BalanceCard from "../components/BalanceCard";
 import Table from "../components/Table";
-import { fetchBalance } from "../lib/api";
+import { fetchBalance } from "../utils/api";
 
 export const dynamic = "force-dynamic";
 

@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { fetchIssues } from "../lib/api";
+import { fetchIssues } from "../utils/api";
 
 type Tx = {
   timestamp: number;
