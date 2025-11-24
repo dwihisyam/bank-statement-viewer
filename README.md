@@ -95,7 +95,7 @@ support for unified builds and simplified distribution.
 
 ### Backend
 
-    cd backend
+    cd backend/cmd/app
     go get
 
 ### Frontend
