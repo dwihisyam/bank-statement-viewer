@@ -111,12 +111,11 @@ support for unified builds and simplified distribution.
 
 ### Frontend .env
 
-    NEXT_PUBLIC_API_URL=http://localhost:8000
+    NEXT_PUBLIC_API_URL=http://localhost:8080
 
 # 🐳 Running the Project with Docker
 
     docker compose up --build
-    docker compose up -d
     docker compose down
 
 # 🖥️ Running the Project Locally
